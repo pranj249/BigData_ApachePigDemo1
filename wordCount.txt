@@ -1,0 +1,5 @@
+hw = load 'wordcount.txt';
+hw1 = foreach hw generate FLATTEN(TOKENIZE(' '));
+hw2 = group hw1 all;
+hw3 = foreach hw2 generate COUNT(hw1);
+dump hw3
